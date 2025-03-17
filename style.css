@@ -60,14 +60,13 @@ h1 {
     font-size: medium;
     font-weight: 300;
 }
-
 .icons {
     text-align: center;
     padding-bottom: 20px;
 }
-.icon_link:hover,
-.icon_link:active,
+
 .icon_link {
+    position: relative;
     text-decoration: none;
     color: var(--fg);
 }
@@ -76,4 +75,20 @@ h1 {
     width: 2em;
     height: auto;
     padding: 5px;
+}
+
+.description {
+    visibility: hidden;
+    background-color: var(--a3);
+    color: var(--bg);
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    bottom: 220%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon_link:hover .description {
+    visibility: visible;
 }
