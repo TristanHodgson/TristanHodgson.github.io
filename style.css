@@ -84,9 +84,10 @@ h1 {
     text-align: center;
     padding: 5px;
     position: absolute;
-    bottom: 2.6em;
+    top: 1em;
     left: 50%;
     transform: translateX(-50%);
+    font-size: small;
 }
 
 .icon_link:hover .description {
