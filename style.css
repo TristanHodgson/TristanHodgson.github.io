@@ -1,5 +1,5 @@
-@import url("fonts/FiraCode-VariableFont_wght");
-@import url("fonts/Asap-VariableFont_wdth,wght");
+@import url("fonts/firacode.ttf");
+@import url("fonts/asap.ttf");
 
 :root {
     --fg: #08090a;
