@@ -1,3 +1,13 @@
+:root {
+  --fg:#071013;
+  --bg:#DFE0E2;
+  --a1:#75ABBC; /* Accent color 1 */
+  --a2:#23B5D3;
+  --a3:#A2AEBB;
+}
+
+
+
 .mid {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -5,4 +15,5 @@
     padding-left: 5%;
     padding-right: 5%;
     margin: 28px auto 0;
+    background-color: red;
 }
