@@ -59,6 +59,8 @@ h1 {
     color: var(--a3);
     font-size: medium;
     font-weight: 300;
+    font-family: "Fira Code", monospace;
+
 }
 .icons {
     text-align: center;
