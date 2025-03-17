@@ -84,7 +84,7 @@ h1 {
     text-align: center;
     padding: 5px;
     position: absolute;
-    bottom: 220%;
+    bottom: 2.6em;
     left: 50%;
     transform: translateX(-50%);
 }
