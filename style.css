@@ -66,10 +66,7 @@ h1 {
 
 .icons {
     text-align: center;
-    font-size: x-large;
     padding-bottom: 20px;
-    width: "2em";
-    height: "auto";
 }
 .icon_link:hover, .icon_link:active, .icon_link { text-decoration: none; color:var(--fg) }
 
