@@ -1,12 +1,18 @@
-@import url("fonts/firacode.ttf");
-@import url("fonts/asap.ttf");
-
 :root {
     --fg: #08090a;
     --bg: #f5f5f5;
     --a1: #99cbe6; /* Accent color 1 */
     --a2: #9dd1f1;
     --a3: #201e1f;
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: URL("fonts/firacode.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Asap";
+    src: URL("fonts/asap.ttf") format("truetype");
 }
 
 body {
@@ -40,13 +46,7 @@ h1 {
 }
 
 .callout {
-    background: repeating-linear-gradient(
-        135deg,
-        var(--a1),
-        var(--a1) 10px,
-        var(--a2) 10px,
-        var(--a2) 20px
-    );
+    background: repeating-linear-gradient(135deg, var(--a1), var(--a1) 10px, var(--a2) 10px, var(--a2) 20px);
     border-radius: 10px;
     width: 40%;
     padding: 10px;
@@ -67,7 +67,12 @@ h1 {
     text-align: center;
     padding-bottom: 20px;
 }
-.icon_link:hover, .icon_link:active, .icon_link { text-decoration: none; color:var(--fg) }
+.icon_link:hover,
+.icon_link:active,
+.icon_link {
+    text-decoration: none;
+    color: var(--fg);
+}
 
 .icon {
     width: 2em;
