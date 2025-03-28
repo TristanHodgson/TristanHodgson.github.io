@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <circle cx="96" cy="96" r="96" style="fill:rgb(153,203,230);"/>
+    <g transform="matrix(0.243066,0,0,0.243066,25.9939,33.7629)">
+        <path d="M9.4,86.6C-3.1,74.1 -3.1,53.9 9.4,41.4C21.9,28.9 42.2,28.9 54.7,41.4L246.7,233.4C259.2,245.9 259.2,266.2 246.7,278.7L54.7,470.7C42.2,483.2 21.9,483.2 9.4,470.7C-3.1,458.2 -3.1,437.9 9.4,425.4L178.7,256L9.4,86.6ZM256,416L544,416C561.7,416 576,430.3 576,448C576,465.7 561.7,480 544,480L256,480C238.3,480 224,465.7 224,448C224,430.3 238.3,416 256,416Z" style="fill:rgb(61,59,63);fill-rule:nonzero;"/>
+    </g>
+</svg>
