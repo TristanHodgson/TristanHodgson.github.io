@@ -7,14 +7,6 @@
 }
 
 @font-face {
-    font-family: "Fira Code";
-    src: URL("fonts/firacode.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Asap";
-    src: URL("fonts/asap.ttf") format("truetype");
-}
-@font-face {
     font-family: "Nebula";
     src: URL("fonts/NebulaSans-Medium") format("truetype");
 }
@@ -30,7 +22,7 @@ body {
 }
 
 h1 {
-    font-family: "Fira Code", monospace;
+    font-family: "Nebula", monospace;
     font-style: normal;
     font-size: xxx-large;
     text-align: center;
@@ -63,7 +55,7 @@ h1 {
     color: var(--a3);
     font-size: medium;
     font-weight: 300;
-    font-family: "Fira Code", monospace;
+    font-family: "Nebula", monospace;
 }
 .icons {
     text-align: center;
