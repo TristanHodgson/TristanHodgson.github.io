@@ -4,6 +4,7 @@
     --a1: #99cbe6; /* Accent color 1 */
     --a2: #9dd1f1;
     --a3: #3d3b3f;
+    --a4: #e8e8e8;
 }
 
 @font-face {
@@ -40,7 +41,13 @@ h1 {
 }
 
 .callout {
-    background: repeating-linear-gradient(135deg, var(--a1), var(--a1) 10px, var(--a2) 10px, var(--a2) 20px);
+    background: repeating-linear-gradient(
+        135deg,
+        var(--a1),
+        var(--a1) 10px,
+        var(--a2) 10px,
+        var(--a2) 20px
+    );
     border-radius: 10px;
     width: 40%;
     padding: 10px;
@@ -89,4 +96,54 @@ h1 {
 
 .icon_link:hover .description {
     visibility: visible;
+}
+
+summary {
+    cursor: pointer;
+    outline: none; /* Remove outline on focus */
+    padding: 5px;
+}
+
+summary:hover {
+    background-color: var(--a4);
+}
+
+/* Style for the list item containing the collapsible details */
+.collapsible-li {
+    list-style: none; /* Removes the default bullet point */
+    margin-left: -20px; /* Adjust this to pull the summary/arrow back into alignment */
+    /* You might need to fine-tune margin-left based on your ul's default padding */
+}
+
+/* Style for the summary element (the clickable heading) */
+.collapsible-li summary {
+    display: list-item; /* Makes the summary behave like a list item for its marker */
+    list-style-type: disclosure-closed; /* Sets the arrow marker for the summary */
+    cursor: pointer;
+    font-weight: normal; /* To match regular list items if preferred */
+}
+
+/* Changes the arrow when the details are open */
+.collapsible-li details[open] summary {
+    list-style-type: disclosure-open;
+}
+
+/* Styles for nested lists within the collapsible section */
+.collapsible-li ul {
+    padding-left: 20px; /* Indent nested lists to align with standard bullets */
+}
+
+.item-title {
+    font-weight: 600;
+}
+
+.item-date {
+    white-space: nowrap; /* Prevent date from wrapping */
+    margin-left: 1rem; /* Space between title and date */
+}
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; /* Align text baselines */
+    margin-bottom: 0.5rem;
 }
