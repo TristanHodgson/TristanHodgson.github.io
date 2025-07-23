@@ -40,6 +40,11 @@ h1 {
     margin: 28px auto 0;
 }
 
+a:has(.callout) {
+    color: inherit;
+    text-decoration: none;
+}
+
 .callout {
     background: repeating-linear-gradient(
         135deg,
@@ -100,7 +105,7 @@ h1 {
 
 summary {
     cursor: pointer;
-    outline: none; /* Remove outline on focus */
+    outline: none;
     padding: 5px;
 }
 
@@ -108,29 +113,24 @@ summary:hover {
     background-color: var(--a4);
 }
 
-/* Style for the list item containing the collapsible details */
 .collapsible-li {
-    list-style: none; /* Removes the default bullet point */
-    margin-left: -20px; /* Adjust this to pull the summary/arrow back into alignment */
-    /* You might need to fine-tune margin-left based on your ul's default padding */
+    list-style: none;
+    margin-left: -20px;
 }
 
-/* Style for the summary element (the clickable heading) */
 .collapsible-li summary {
-    display: list-item; /* Makes the summary behave like a list item for its marker */
-    list-style-type: disclosure-closed; /* Sets the arrow marker for the summary */
+    display: list-item;
+    list-style-type: disclosure-closed;
     cursor: pointer;
-    font-weight: normal; /* To match regular list items if preferred */
+    font-weight: normal;
 }
 
-/* Changes the arrow when the details are open */
 .collapsible-li details[open] summary {
     list-style-type: disclosure-open;
 }
 
-/* Styles for nested lists within the collapsible section */
 .collapsible-li ul {
-    padding-left: 20px; /* Indent nested lists to align with standard bullets */
+    padding-left: 20px;
 }
 
 .item-title {
@@ -138,12 +138,12 @@ summary:hover {
 }
 
 .item-date {
-    white-space: nowrap; /* Prevent date from wrapping */
-    margin-left: 1rem; /* Space between title and date */
+    white-space: nowrap;
+    margin-left: 1rem;
 }
 .item-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* Align text baselines */
+    align-items: baseline;
     margin-bottom: 0.5rem;
 }
