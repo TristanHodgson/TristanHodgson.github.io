@@ -19,7 +19,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    font-size: normal;
+    font-size: 1.1rem;
     text-align: justify;
 
 }
@@ -40,12 +40,12 @@ small {
 
 h2 {
     padding-bottom: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 ul {
     padding-top: 0px;
-    margin-top: 0px;
+    margin-top: 5px;
 }
 
 .mid {
@@ -135,7 +135,12 @@ summary:hover {
     margin-left: -20px;
 }
 
+.collapsible-li details {
+    padding-left: 20px; /* This will indent the details content */
+}
+
 .collapsible-li summary {
+    margin-left: -20px; /* This will counteract the padding for the summary */
     display: list-item;
     list-style-type: disclosure-closed;
     cursor: pointer;
