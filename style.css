@@ -174,3 +174,32 @@ summary:hover {
     text-align: justify;
     text-justify: inter-word;
 }
+
+
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns */
+    gap: 1.5rem; /* Add some space between the columns */
+    padding-left: 0; /* Remove default ul padding */
+}
+
+.modules-grid > li {
+    list-style-type: none; /* Remove the bullet points from the term items */
+}
+
+.modules-grid ul {
+    padding-left: 20px; /* Keep nested lists indented */
+}
+
+.modules-grid ul li {
+    font-size: 1rem; /* Makes font slightly smaller than the body's 1.1rem */
+    text-align: left; /* Overrides the 'justify' alignment */
+}
+
+/* For screens smaller than 700px, stack the columns */
+@media (max-width: 700px) {
+    .modules-grid {
+        grid-template-columns: 1fr; /* Go back to a single column */
+    }
+}
