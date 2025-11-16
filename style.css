@@ -1,205 +1,224 @@
 :root {
-    --fg: #08090a;
-    --bg: #f5f5f5;
-    --a1: #99cbe6; /* Accent color 1 */
-    --a2: #9dd1f1;
-    --a3: #3d3b3f;
-    --a4: #e8e8e8;
+  --fg: #08090a;
+  --bg: #f5f5f5;
+  --a1: #99cbe6; /* Accent color 1 */
+  --a2: #9dd1f1;
+  --a3: #3d3b3f;
+  --a4: #e8e8e8;
 }
 
 @font-face {
-    font-family: "Nebula";
-    src: URL("fonts/NebulaSans-Medium") format("truetype");
+  font-family: "Nebula";
+  src: URL("fonts/NebulaSans-Medium") format("truetype");
 }
 
 body {
-    background-color: var(--bg);
-    color: var(--fg);
-    font-family: "Nebula", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 1.1rem;
-    text-align: justify;
-
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Nebula", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
 h1 {
-    font-family: "Nebula", monospace;
-    font-style: normal;
-    font-size: xxx-large;
-    text-align: center;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+  font-family: "Nebula", monospace;
+  font-style: normal;
+  font-size: xxx-large;
+  text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 small {
-    padding-top: 0px;
-    margin-top: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 h2 {
-    padding-bottom: 0px;
-    margin-bottom: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
 }
 
 ul {
-    padding-top: 0px;
-    margin-top: 5px;
+  padding-top: 0px;
+  margin-top: 5px;
 }
 
 .mid {
-    padding-top: 1%;
-    padding-bottom: 5%;
-    max-width: 800px;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin: 28px auto 0;
+  padding-top: 1%;
+  padding-bottom: 5%;
+  max-width: 800px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 28px auto 0;
 }
 
 a:has(.callout) {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .callout {
-    background: repeating-linear-gradient(
-        135deg,
-        var(--a1),
-        var(--a1) 10px,
-        var(--a2) 10px,
-        var(--a2) 20px
-    );
-    border-radius: 10px;
-    width: 40%;
-    padding: 10px;
-    margin: 10px auto 0;
-    text-align: center;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--a1),
+    var(--a1) 10px,
+    var(--a2) 10px,
+    var(--a2) 20px
+  );
+  border-radius: 10px;
+  width: 40%;
+  padding: 10px;
+  margin: 10px auto 0;
+  text-align: center;
 }
 
 .byline {
-    text-align: center;
-    padding-top: 0px;
-    margin-top: 0px;
-    color: var(--a3);
-    font-size: medium;
-    font-weight: 300;
-    font-family: "Nebula", monospace;
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 0px;
+  color: var(--a3);
+  font-size: medium;
+  font-weight: 300;
+  font-family: "Nebula", monospace;
 }
 .icons {
-    text-align: center;
-    padding-bottom: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .icon_link {
-    position: relative;
-    text-decoration: none;
-    color: var(--fg);
+  position: relative;
+  text-decoration: none;
+  color: var(--fg);
 }
 
 .icon {
-    width: 2em;
-    height: auto;
-    padding: 5px;
+  width: 2em;
+  height: auto;
+  padding: 5px;
 }
 
 .description {
-    visibility: hidden;
-    background-color: var(--a3);
-    color: var(--bg);
-    text-align: center;
-    padding: 5px;
-    position: absolute;
-    top: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: small;
+  visibility: hidden;
+  background-color: var(--a3);
+  color: var(--bg);
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: small;
 }
 
 .icon_link:hover .description {
-    visibility: visible;
+  visibility: visible;
 }
 
 summary {
-    cursor: pointer;
-    outline: none;
-    padding: 5px;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
 }
 
 summary:hover {
-    background-color: var(--a4);
+  background-color: var(--a4);
 }
 
 .collapsible-li {
-    list-style: none;
-    margin-left: -20px;
+  list-style: none;
+  margin-left: -20px;
 }
 
 .collapsible-li details {
-    padding-left: 20px; /* This will indent the details content */
+  padding-left: 20px; /* This will indent the details content */
 }
 
 .collapsible-li summary {
-    margin-left: -20px; /* This will counteract the padding for the summary */
-    display: list-item;
-    list-style-type: disclosure-closed;
-    cursor: pointer;
-    font-weight: normal;
+  margin-left: -20px; /* This will counteract the padding for the summary */
+  display: list-item;
+  list-style-type: disclosure-closed;
+  cursor: pointer;
+  font-weight: normal;
 }
 
 .collapsible-li details[open] summary {
-    list-style-type: disclosure-open;
+  list-style-type: disclosure-open;
 }
 
 .collapsible-li ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .item-title {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .item-date {
-    white-space: nowrap;
-    margin-left: 1rem;
+  white-space: nowrap;
+  margin-left: 1rem;
 }
 .item-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
 }
 
 .article {
-    text-align: justify;
-    text-justify: inter-word;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
-
-
 .modules-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns */
-    gap: 1.5rem; /* Add some space between the columns */
-    padding-left: 0; /* Remove default ul padding */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns */
+  gap: 1.5rem; /* Add some space between the columns */
+  padding-left: 0; /* Remove default ul padding */
 }
 
 .modules-grid > li {
-    list-style-type: none; /* Remove the bullet points from the term items */
+  list-style-type: none; /* Remove the bullet points from the term items */
 }
 
 .modules-grid ul {
-    padding-left: 20px; /* Keep nested lists indented */
+  padding-left: 20px; /* Keep nested lists indented */
 }
 
 .modules-grid ul li {
-    font-size: 1rem; /* Makes font slightly smaller than the body's 1.1rem */
-    text-align: left; /* Overrides the 'justify' alignment */
+  font-size: 1rem; /* Makes font slightly smaller than the body's 1.1rem */
+  text-align: left; /* Overrides the 'justify' alignment */
 }
 
 /* For screens smaller than 700px, stack the columns */
 @media (max-width: 700px) {
-    .modules-grid {
-        grid-template-columns: 1fr; /* Go back to a single column */
-    }
+  .modules-grid {
+    grid-template-columns: 1fr; /* Go back to a single column */
+  }
+}
+
+/* Mobile: place date under the title */
+@media (max-width: 700px) {
+  .item-row {
+    flex-direction: column; /* stack title above date */
+    align-items: flex-start; /* left-align the stack */
+    justify-content: flex-start; /* undo desktop space-between */
+  }
+
+  .item-title {
+    margin-bottom: 0; /* tidy spacing above date */
+  }
+
+  .item-date {
+    margin-left: 0; /* remove desktop horizontal gap */
+    margin-top: 0.25rem; /* add a bit of vertical separation */
+    white-space: normal; /* allow wrapping on narrow screens */
+  }
+  body {
+    text-align: left;
+  }
 }
