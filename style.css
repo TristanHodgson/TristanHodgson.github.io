@@ -84,7 +84,13 @@ a:has(.callout) {
   font-size: medium;
   font-weight: 300;
   font-family: "Nebula", monospace;
+  text-decoration: none;
+  
 }
+.byline a {
+  color: var(--a3);
+  text-decoration: none;}
+
 .icons {
   text-align: center;
   padding-bottom: 20px;
@@ -169,10 +175,6 @@ summary:hover {
   margin-bottom: 0.5rem;
 }
 
-.article {
-  text-align: justify;
-  text-justify: inter-word;
-}
 
 .modules-grid {
   display: grid;
