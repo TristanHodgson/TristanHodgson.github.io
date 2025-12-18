@@ -146,6 +146,23 @@
         <div class="item">
             <div class="item-row">
                 <div class="item-title">
+                    Linear Algebra in SQL
+                </div>
+                <div class="item-date">(<a
+                        href="https://github.com/TristanHodgson/Linalg-sql/blob/main/write-up/main.pdf">Write up</a>/<a
+                        href="https://github.com/TristanHodgson/Linalg-sql">Github</a>)</div>
+            </div>
+            <ul>
+                <li>Implemented matrix multiplication in SQL using joins and grouped summation, avoiding client-side computation</li>
+                <li>Benchmarked in-database multiplication against NumPy across matrix sizes and sparsity levels, including a simulated internet data-transfer bottleneck</li>
+                <li>Found that NumPy dominates dense workloads, while sufficiently sparse matrices make SQL execution faster</li>
+            </ul>
+        </div>
+
+
+        <div class="item">
+            <div class="item-row">
+                <div class="item-title">
                     Code Breaking with Machine Learning
                 </div>
                 <div class="item-date">(<a href="https://github.com/TristanHodgson/Code-breaking-NN">Github)</a></div>
@@ -157,21 +174,7 @@
             </ul>
         </div>
 
-        <div class="item">
-            <div class="item-row">
-                <div class="item-title">
-                    Linear Algebra in SQL
-                </div>
-                <div class="item-date">(<a
-                        href="https://github.com/TristanHodgson/Linalg-sql/blob/main/write-up/main.pdf">Write up</a>/<a
-                        href="https://github.com/TristanHodgson/Linalg-sql">Github</a>)</div>
-            </div>
-            <ul>
-                <li>Implemented matrix multiplication in PostgreSQL, translating linear algebra operations into
-                    efficient SQL queries</li>
-                <li>Benchmarked matrix multiplication against NumPy, outperforming it on sparse matrices</li>
-            </ul>
-        </div>
+
 
         <div class="item">
             <div class="item-row">
