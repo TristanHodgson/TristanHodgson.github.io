@@ -28,6 +28,7 @@ h1 {
   font-style: normal;
   font-size: xxx-large;
   text-align: center;
+  margin-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
@@ -223,4 +224,39 @@ summary:hover {
   body {
     text-align: left;
   }
+}
+
+
+.site-nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+  z-index: 1000;
+}
+
+.site-nav__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.site-nav__link {
+  font-family: "Nebula", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--a3);
+  text-decoration: none;
+}
+
+.site-nav__link:hover {
+  text-decoration: none;
+}
+
+.site-nav__link[aria-current="page"] {
+  font-weight: 500;
+  color: var(--fg);
 }
