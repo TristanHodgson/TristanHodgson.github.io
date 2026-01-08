@@ -159,25 +159,11 @@
                         up</a>/<a href="https://github.com/TristanHodgson/Linalg-sql">Github</a>)</div>
             </div>
             <ul>
-                <li>Analysed when matrix multiplication should be performed inside a PostgreSQL database versus in Python/NumPy by building a runtime model incorporating sparsity, matrix size, and network transfer costs</li>
-                <li>Implemented matrix multiplication in SQL then benchmarked it across different matrix sizes and sparsity levels to evaluate the model</li>
-                <li>Identified the sparsity threshold function where in-database outperforms client-side computation to inform system architecture decisions</li>
+                <li>Modelled performance trade-offs between in-database and client-side matrix multiplication under compute, sparsity, and bandwidth constraints</li>
+                <li>Benchmarked performance to validate asymptotic runtime predictions across matrices of varying size and sparsity</li>
+                <li>Derived and validated the sparsity threshold function where in-database outperforms client-side computation to inform system architecture decisions</li>
             </ul>
         </div>
-
-
-        <div class="item">
-            <div class="item-row">
-                <div class="item-title">Real Estate Market Dashboard</div>
-                <div class="item-date">(<a href="https://github.com/TristanHodgson/housing-dashboard">Github)</a></div>
-            </div>
-            <ul>
-                <li>Constructed a data pipeline to ingest government statistics, transforming transaction data into time-series data</li>
-                <li>Segmented the housing market using PCA and K-Means to uncover regional and socio-economic divides without relying on location-based data</li>
-                <li>Visualized complex datasets, using interactive maps and graphs to enable exploratory analysis of price and returns</li>
-            </ul>
-        </div>
-
 
         <div class="item">
             <div class="item-row">
@@ -189,9 +175,24 @@
             <ul>
                 <li>Implemented LSTM seq2seq models in PyTorch to perform neural cryptanalysis of Caesar and substitution ciphers on natural-language sequences</li>
                 <li>Extended prior neural cryptanalysis work by introducing a known prefix, reducing character-level errors by 41%</li>
-                <li>Benchmarked against a random-guess baseline, showing the model learned meaningful decryption structure</li>
+                <li>Benchmarked against a random baseline to validate that the model learned decryption structure</li>
             </ul>
         </div>
+
+        <div class="item">
+            <div class="item-row">
+                <div class="item-title">Real Estate Market Dashboard</div>
+                <div class="item-date">(<a href="https://github.com/TristanHodgson/housing-dashboard">Github)</a></div>
+            </div>
+            <ul>
+                <li>Constructed a data pipeline to ingest government statistics, transforming transaction data into time-series data</li>
+                <li>Segmented the housing market using PCA and K-Means, revealing regional and socio-economic divides without relying on location-based data</li>
+                <li>Visualized complex datasets, using interactive maps and graphs to enable exploratory analysis of price and returns</li>
+            </ul>
+        </div>
+
+
+
 
 
         <div class="item">
@@ -202,7 +203,7 @@
             <ul>
                 <li>Independently studied literature on Kolmogorov complexity and compression-based similarity measures</li>
                 <li>Implemented a simple illustrative example (Normalized Compression Distance) to support explanation of abstract concepts</li>
-                <li>Presented and communicated the theory, motivation, and limitations to a mixed undergraduate-faculty audience</li>
+                <li>Presented core theory, motivation, and limitations to a mixed undergraduate-faculty audience</li>
             </ul>
         </div>
 
