@@ -153,91 +153,59 @@
 
         <div class="item">
             <div class="item-row">
-                <div class="item-title">
-                    Sparse Matrix Performance Analysis, SQL vs. NumPy
-                </div>
+                <div class="item-title">Performance Modelling of In-Database Sparse Matrix Multiplication</div>
                 <div class="item-date">(<a
                         href="https://github.com/TristanHodgson/Linalg-sql/blob/main/write-up/main.pdf?raw=true">Write
                         up</a>/<a href="https://github.com/TristanHodgson/Linalg-sql">Github</a>)</div>
             </div>
             <ul>
-                <li>Implemented matrix multiplication in SQL using joins and grouped summation, avoiding client-side
-                    computation</li>
-                <li>Benchmarked in-database multiplication against NumPy across different matrix sizes and sparsity
-                    levels, including a simulated internet data-transfer bottleneck</li>
-                <li>Modelled latency to identify the critical sparsity threshold where in-database outperforms
-                    client-side execution</li>
+                <li>Analysed when matrix multiplication should be performed inside a PostgreSQL database versus in Python/NumPy by building a runtime model incorporating sparsity, matrix size, and network transfer costs</li>
+                <li>Implemented matrix multiplication in SQL then benchmarked it across different matrix sizes and sparsity levels to evaluate the model</li>
+                <li>Identified the sparsity threshold function where in-database outperforms client-side computation to inform system architecture decisions</li>
             </ul>
         </div>
 
 
         <div class="item">
             <div class="item-row">
-                <div class="item-title">
-                    Real Estate Market Monitor
-                </div>
+                <div class="item-title">Real Estate Market Dashboard</div>
                 <div class="item-date">(<a href="https://github.com/TristanHodgson/housing-dashboard">Github)</a></div>
             </div>
             <ul>
-                <li>Constructed a data pipeline to ingest government statistics, transforming transaction data into
-                    time-series data</li>
-                <li>Applied unsupervised learning algorithms (PCA, K-Means) to automatically segment the housing market
-                </li>
-                <li>Visualized complex datasets, using interactive maps and graphs to enable exploratory analysis of
-                    price and returns</li>
+                <li>Constructed a data pipeline to ingest government statistics, transforming transaction data into time-series data</li>
+                <li>Segmented the housing market using PCA and K-Means to uncover regional and socio-economic divides without relying on location-based data</li>
+                <li>Visualized complex datasets, using interactive maps and graphs to enable exploratory analysis of price and returns</li>
             </ul>
         </div>
 
 
         <div class="item">
             <div class="item-row">
-                <div class="item-title">Code Breaking with Machine Learning</div>
+                <div class="item-title">Known Prefix Neural Cryptanalysis with seq2seq Models</div>
                 <div class="item-date">(<a
                         href="https://github.com/TristanHodgson/Code-breaking-NN/blob/main/write-up/main.pdf?raw=true">Write
                         up</a>/<a href="https://GitHub.com/TristanHodgson/Code-breaking-NN">Github</a>)</div>
             </div>
             <ul>
-                <li>Extended existing neural cryptanalysis work by applying LSTM seq2seq models to Caesar and
-                    substitution ciphers</li>
-                <li>Explored the effect of adding a known plaintext prefix to the ciphertext, observing improved model
-                    performance</li>
-                <li>Designed controlled natural language experiments using large public-domain text data</li>
+                <li>Implemented LSTM seq2seq models in PyTorch to perform neural cryptanalysis of Caesar and substitution ciphers on natural-language sequences</li>
+                <li>Extended prior neural cryptanalysis work by introducing a known prefix, reducing character-level errors by 41%</li>
+                <li>Benchmarked against a random-guess baseline, showing the model learned meaningful decryption structure</li>
             </ul>
         </div>
 
 
         <div class="item">
             <div class="item-row">
-                <div class="item-title">Algorithmic Information Theory, Kolmogorov Complexity</div>
+                <div class="item-title">Presentation on Algorithmic Information Theory, Kolmogorov Complexity</div>
                 <div class="item-date">(<a href="https://www.tristanhodgson.com/blog#kolmogorov">Slides)</a></div>
             </div>
             <ul>
-                <li>Applied Kolmogorov complexity and Normalized Compression Distance to language clustering, drawing on and implementing ideas from research literature; presented to a mixed undergraduate-faculty audience</li>
+                <li>Independently studied literature on Kolmogorov complexity and compression-based similarity measures</li>
+                <li>Implemented a simple illustrative example (Normalized Compression Distance) to support explanation of abstract concepts</li>
+                <li>Presented and communicated the theory, motivation, and limitations to a mixed undergraduate-faculty audience</li>
             </ul>
         </div>
 
-        <div class="item">
-            <div class="item-row">
-                <div class="item-title">Geometric Brownian Motion for Pension Risk</div>
-                <div class="item-date">(Coursework)</div>
-            </div>
-            <ul>
-                <li>Applied Geometric Brownian Motion in Python to simulate long-term pension fund performance and
-                    assess investment risk</li>
-                <li>Vectorised operations in NumPy</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <div class="item-row">
-                <div class="item-title">Convex Hull Algorithms</div>
-                <div class="item-date">(Coursework)</div>
-            </div>
-            <ul>
-                <li>Implemented Graham's Scan and Divide and Conquer algorithms in Python to compute the convex hull of
-                    data points, and analysed the time complexity of the algorithms</li>
-            </ul>
-        </div>
 
         <div class="item">
             <div class="item-row">
@@ -246,9 +214,8 @@
                 </div>
             </div>
             <ul>
-                <li>Deployed a server, using Proxmox and Docker to self-host containerised open-source services</li>
-                <li>Gained hands-on Linux experience, including server administration (managed securely via SSH), and
-                    use of desktop Linux as a development environment</li>
+                <li>Designed and deployed a self-hosted environment, with virtualisation via Proxmox and containerised services using Docker, accessed remotely via SSH and reverse proxying</li>
+                <li>Daily Linux use across desktop and server environments, solving problems independently through documentation</li>
             </ul>
         </div>
 
@@ -260,22 +227,6 @@
 
 
         <h2>Relevant Experience</h2>
-
-        <div class="item">
-            <div class="item-row">
-                <div class="item-title">
-                    Operations Internship, It's Our Planet Too
-                </div>
-                <div class="item-date">(One Week, Summer 2025)</div>
-            </div>
-            <ul>
-                <li>Partnered directly with the business owner to redesign operational workflows, replacing legacy
-                    spreadsheets with a structured system using Power Query, User forms, and Pivot Tables</li>
-                <li>Developed dynamic dashboards tailored to different operational tasks, simplifying the management of
-                    subscription, shipping, and sales data</li>
-                <li>Created documentation to enable users to understand and maintain the new system</li>
-            </ul>
-        </div>
 
 
         <div class="item">
@@ -294,6 +245,26 @@
 
             </ul>
         </div>
+
+
+
+        <div class="item">
+            <div class="item-row">
+                <div class="item-title">
+                    Operations Internship, It's Our Planet Too
+                </div>
+                <div class="item-date">(One Week, Summer 2025)</div>
+            </div>
+            <ul>
+                <li>Partnered directly with the business owner to redesign operational workflows, replacing legacy
+                    spreadsheets with a structured system using Power Query, User forms, and Pivot Tables</li>
+                <li>Developed dynamic dashboards tailored to different operational tasks, simplifying the management of
+                    subscription, shipping, and sales data</li>
+                <li>Created documentation to enable users to understand and maintain the new system</li>
+            </ul>
+        </div>
+
+
 
 
         <div class="item">
@@ -340,8 +311,7 @@
                 <div class="item-date">(Aug 2025)</div>
             </div>
             <ul>
-                <li>Completed a certification program covering the foundational principles of financial markets,
-                    investment, and their economic and regulatory drivers</li>
+                <li>Completed a certification program covering the foundational principles of financial markets, investment, and their economic and regulatory drivers</li>
             </ul>
         </div>
 
@@ -352,8 +322,7 @@
             </div>
             <ul>
                 <li>Adapted quickly to new challenges, learning navigation, and teamwork in unfamiliar environments</li>
-                <li>Independently planned and completed an expedition, demonstrating resilience, and self-sufficiency
-                </li>
+                <li>Independently planned and completed an expedition, demonstrating resilience, and self-sufficiency</li>
             </ul>
         </div>
 
