@@ -140,6 +140,23 @@ summary {
   margin-left: 1rem;
 }
 
+@media (max-width: 768px) {
+  .item-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item-date {
+    margin-left: 0;
+    margin-top: 0.2rem;
+  }
+  .item-title {
+    text-align: left;
+  }
+  body {
+    text-align: left;
+  }
+}
+
 .collapsible-li {
   list-style: none;
   margin-left: -20px;
