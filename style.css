@@ -343,4 +343,16 @@ a:hover .callout {
   h1 {
     font-size: 1.8rem;
   }
+  /* Reorder Modules on Mobile */
+  .modules-grid {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .modules-grid > li:nth-child(1) { order: 3; } /* MT Year 2 */
+  .modules-grid > li:nth-child(2) { order: 2; } /* HT Year 2 */
+  .modules-grid > li:nth-child(3) { order: 1; } /* TT Year 2 (Current) */
+  .modules-grid > li:nth-child(4) { order: 6; } /* MT Year 1 */
+  .modules-grid > li:nth-child(5) { order: 5; } /* HT Year 1 */
+  .modules-grid > li:nth-child(6) { order: 4; } /* TT Year 1 */
 }
