@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: var(--a6);
+  color: var(--a1);
 }
 
 h1, h2, h3 {
@@ -123,8 +123,8 @@ ul {
 }
 
 .byline a:hover {
-  color: var(--a6);
-  border-color: var(--a6);
+  color: var(--a1);
+  border-color: var(--a1);
 }
 
 /* LISTS & COLLAPSIBLES */
@@ -163,8 +163,8 @@ ul {
 }
 
 .item-date a:hover {
-  color: var(--a6);
-  border-bottom-color: var(--a6);
+  color: var(--a1);
+  border-bottom-color: var(--a1);
 }
 
 .collapsible-li {
@@ -315,8 +315,42 @@ a:has(.callout) {
 }
 
 a:hover .callout {
-  background-color: var(--a6);
+  background-color: var(--a1);
   transform: translateY(-2px);
+}
+
+
+/* CALLOUT BUTTON GROUPS (Centered, side-by-side) */
+.button-group {
+  display: flex;
+  flex-wrap: wrap; /* Wraps to a new line on small screens */
+  justify-content: center; /* Centers the buttons on the page */
+  gap: 20px; /* Space between buttons */
+  margin: 2rem 0 1rem 0;
+}
+
+.button-group a {
+  background-color: var(--a2);
+  color: var(--bg);
+  border-radius: var(--border-radius);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-bottom: none;
+  box-shadow: 0 2px 4px var(--shadow-base);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-group a:hover {
+  color: var(--bg);
+  background-color: var(--a1);
+  border-bottom: none;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+.button-group a:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px var(--shadow-base);
 }
 
 /* MOBILE RESPONSIVENESS */
