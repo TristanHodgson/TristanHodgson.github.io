@@ -12,7 +12,7 @@
   --layout-max-width: 850px;
   --shadow-base: 0 4px 6px rgba(46, 52, 64, 0.05);
   --shadow-hover: 0 8px 15px rgba(46, 52, 64, 0.1);
-  --border-radius: 8px;
+  --border-radius: 3px;
 }
 
 @font-face {
