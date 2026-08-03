@@ -321,6 +321,9 @@ a:hover .callout {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
+  body {
+    text-align: left;
+  }
   .box {
     margin: 1rem 0;
     padding: 1.25rem;
