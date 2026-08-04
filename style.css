@@ -320,37 +320,48 @@ a:hover .callout {
 }
 
 
-/* CALLOUT BUTTON GROUPS (Centered, side-by-side) */
-.button-group {
-  display: flex;
-  flex-wrap: wrap; /* Wraps to a new line on small screens */
-  justify-content: center; /* Centers the buttons on the page */
-  gap: 20px; /* Space between buttons */
-  margin: 2rem 0 1rem 0;
-}
-
-.button-group a {
+/* STANDARD BUTTONS */
+.btn {
+  display: block;
   background-color: var(--a2);
   color: var(--bg);
+  font-family: "Nebula", monospace;
+  font-size: 1.05rem;
+  font-weight: 500;
   border-radius: var(--border-radius);
+  width: max-content;
   padding: 12px 25px;
+  margin: 15px auto; /* Centers standalone buttons automatically */
+  text-align: center;
   text-decoration: none;
-  border-bottom: none;
-  box-shadow: 0 2px 4px var(--shadow-base);
+  border-bottom: none; /* Overrides the global link underline */
+  box-shadow: var(--shadow-base);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.button-group a:hover {
-  color: var(--bg);
-  background-color: var(--a1);
+.btn:hover {
+  color: var(--bg); /* Prevents the text from turning blue on hover */
   border-bottom: none;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px var(--shadow-hover);
+  box-shadow: var(--shadow-hover);
 }
 
-.button-group a:active {
+.btn:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 4px var(--shadow-base);
+  box-shadow: var(--shadow-base);
+}
+
+/* BUTTON GROUPS (Centered, side-by-side) */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem 0 1rem 0;
+}
+
+.button-group .btn {
+  margin: 0; /* Prevents flexbox items from fighting with auto-margins */
 }
 
 /* MOBILE RESPONSIVENESS */
