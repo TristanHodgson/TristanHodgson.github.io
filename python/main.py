@@ -102,9 +102,10 @@ detail = "Mathematics through computation"
 url = "tristanhodgson.com"
 
 name_font = font(72)
-subtitle_font = font(32)
-detail_font = font(27)
-url_font = font(23)
+# Increased secondary text sizes by ~1.15x
+subtitle_font = font(36)
+detail_font = font(30)
+url_font = font(25)
 
 x_text = 90
 
@@ -215,8 +216,9 @@ else:
 
 
 # 4. Calculate mapping from Canvas Pixels directly to Mathematical Plane
-IMG1_X, IMG1_Y = 1125, 553   # First min (w) -> Bottom Right
-IMG2_X, IMG2_Y = 650, -150   # Second min (z) -> Top Left (Above canvas and behind fade mask)
+# Shifted +100px in both directions from previous positions
+IMG1_X, IMG1_Y = 1225, 653   # First min (w) -> Bottom Right
+IMG2_X, IMG2_Y = 750, -50    # Second min (z) -> Top Left (Above canvas and behind fade mask)
 
 v_img_x = IMG2_X - IMG1_X
 v_img_y = IMG2_Y - IMG1_Y
@@ -242,10 +244,9 @@ sin_rot = math.sin(rotation)
 
 GRID_RES = 160
 
-# We expand the evaluation grid slightly so that the structure around the 
-# hidden top-left minimum is captured before it sweeps into the frame.
-X_MIN_IMG, X_MAX_IMG = 600, 1400
-Y_MIN_IMG, Y_MAX_IMG = -250, 800
+# We expand and shift the evaluation grid by +100px to match the new image mapping
+X_MIN_IMG, X_MAX_IMG = 700, 1500
+Y_MIN_IMG, Y_MAX_IMG = -150, 900
 
 img_x_coords = [X_MIN_IMG + c * (X_MAX_IMG - X_MIN_IMG) / (GRID_RES - 1) for c in range(GRID_RES)]
 img_y_coords = [Y_MIN_IMG + r * (Y_MAX_IMG - Y_MIN_IMG) / (GRID_RES - 1) for r in range(GRID_RES)]
@@ -318,7 +319,7 @@ def get_contour_segments(grid, thresh, img_x, img_y):
 # Geometric rendering
 # ---------------------------------------------------------------------------
 
-NUM_CONTOURS = 12
+NUM_CONTOURS = 15
 bg_rgb = hex_to_rgb(BG)
 
 palette_len = len(COMPONENT_COLOURS)
@@ -341,10 +342,10 @@ for i in range(1, NUM_CONTOURS):
     for pt1, pt2 in segments:
         x_mid = (pt1[0] + pt2[0]) / 2.0
         
-        # Absolute guarantee against text overlap.
-        # Opacity remains strictly 0.0 until x = 800 (well past the text bounds).
-        # It smoothly fades to full opacity by x = 950.
-        fade = min(1.0, max(0.0, (x_mid - 800) / 150.0))
+        # Shifted the fade mask to x = 900 to accommodate the larger text size.
+        # Opacity remains strictly 0.0 until x = 900 (well past the text bounds).
+        # It smoothly fades to full opacity by x = 1050.
+        fade = min(1.0, max(0.0, (x_mid - 900) / 150.0))
         
         if fade > 0.01:
             blended_rgb = rgb_blend(base_rgb, bg_rgb, fade)
