@@ -1,5 +1,3 @@
-# Note this code is fully vibe-coded as it was just a bit of fun rather than anything that matters. It should not be taken as a reflection of my skill (or lack thereof). The goal was simply to produce some images for linkedin.
-
 """
 Social Preview Image Generator: "Mathematics through Computation"
 
@@ -67,56 +65,51 @@ args = parser.parse_args()
 # Configuration
 # ---------------------------------------------------------------------------
 
+OUTPUT_SCALE = 3
+AA_FACTOR = 2  # Supersampling multiplier for antialiasing
+SCALE = OUTPUT_SCALE * AA_FACTOR  # Internal scale used for all drawing operations
+
 if args.mode == "standard":
-    WIDTH, HEIGHT = 1200, 627
+    WIDTH, HEIGHT = 1200 * SCALE, 627 * SCALE
 
     # Text positions, sizes, and alignment
-    NAME_SIZE, SUB_SIZE, DETAIL_SIZE, URL_SIZE = 72, 36, 30, 25
+    NAME_SIZE, SUB_SIZE, DETAIL_SIZE, URL_SIZE = 72 * SCALE, 36 * SCALE, 30 * SCALE, 25 * SCALE
     TEXT_ANCHOR = "lt"  # Left-Top alignment
-    X_TEXT = 90
-    Y_NAME, Y_BAR, Y_SUB, Y_DETAIL, Y_URL = 145, 255, 300, 360, 475
+    X_TEXT = 90 * SCALE
+    Y_NAME, Y_BAR, Y_SUB, Y_DETAIL, Y_URL = 145 * SCALE, 255 * SCALE, 300 * SCALE, 360 * SCALE, 475 * SCALE
 
     # Anchor the blue accent rectangle to the left
-    RECT_X1, RECT_X2 = X_TEXT, X_TEXT + 105
+    RECT_X1, RECT_X2 = X_TEXT, X_TEXT + 105 * SCALE
 
     # Projection anchoring (Mathematical Plane -> Pixels)
-    IMG1_X, IMG1_Y = 1225, 653   # First min -> Bottom Right
-    IMG2_X, IMG2_Y = 750, -50    # Second min -> Top Left
+    IMG1_X, IMG1_Y = 1225 * SCALE, 653 * SCALE   # First min -> Bottom Right
+    IMG2_X, IMG2_Y = 750 * SCALE, -50 * SCALE    # Second min -> Top Left
 
     # Evaluation Grid mapping
-    X_MIN_IMG, X_MAX_IMG = 700, 1500
-    Y_MIN_IMG, Y_MAX_IMG = -150, 900
+    X_MIN_IMG, X_MAX_IMG = 700 * SCALE, 1500 * SCALE
+    Y_MIN_IMG, Y_MAX_IMG = -150 * SCALE, 900 * SCALE
 
     # Fade mask properties (Fades in from left to right)
-    FADE_START, FADE_END = 900, 1050
+    FADE_START, FADE_END = 900 * SCALE, 1050 * SCALE
     FADE_DIRECTION = "in"
 
     OUTPUT_FILE = "social-preview.png"
 
 else:  # linkedin
     # LinkedIn recommended dimensions
-    WIDTH, HEIGHT = 1584, 396
-
-    # Text positions, sizes, and alignment (right padding ~48px)
-    NAME_SIZE, SUB_SIZE, DETAIL_SIZE, URL_SIZE = 64, 32, 26, 22
-    TEXT_ANCHOR = "rt"  # Right-Top alignment
-    X_TEXT = 1536       # Right margin coordinate (1584 width - 48 padding)
-    Y_NAME, Y_BAR, Y_SUB, Y_DETAIL, Y_URL = 70, 160, 195, 245, 315
-
-    # Anchor the blue accent rectangle to the right
-    RECT_X1, RECT_X2 = X_TEXT - 105, X_TEXT
+    WIDTH, HEIGHT = 1584 * SCALE, 396 * SCALE
 
     # Projection anchoring extended rightward by ~10% of total width
-    IMG1_X, IMG1_Y = 550, 320
-    IMG2_X, IMG2_Y = 100, -30
+    IMG1_X, IMG1_Y = 550 * SCALE, 320 * SCALE
+    IMG2_X, IMG2_Y = 100 * SCALE, -30 * SCALE
 
-    # Evaluation Grid mapping extended further right while keeping clear of the text zone
-    X_MIN_IMG, X_MAX_IMG = -150, 760
-    Y_MIN_IMG, Y_MAX_IMG = -100, 450
+    # Evaluation Grid mapping extended to cover the full width
+    X_MIN_IMG, X_MAX_IMG = -150 * SCALE, 1750 * SCALE
+    Y_MIN_IMG, Y_MAX_IMG = -100 * SCALE, 450 * SCALE
 
-    # Fade mask properties extended to utilize more banner space safely
-    FADE_START, FADE_END = 550, 760
-    FADE_DIRECTION = "out"
+    # Disable fade mask to allow the landscape to take up the full image width
+    FADE_START, FADE_END = 0 * SCALE, 0 * SCALE
+    FADE_DIRECTION = "none"
 
     OUTPUT_FILE = "linkedin-banner.png"
 
@@ -167,22 +160,24 @@ def rgb_blend(fg_rgb, bg_rgb, strength):
 image = Image.new("RGB", (WIDTH, HEIGHT), BG)
 draw = ImageDraw.Draw(image)
 
-name = "Tristan Hodgson"
-subtitle = "Mathematics @ University of Oxford"
-detail = "Mathematics through computation"
-url = "tristanhodgson.com"
+# Only draw text if in standard mode
+if args.mode == "standard":
+    name = "Tristan Hodgson"
+    subtitle = "Mathematics @ University of Oxford"
+    detail = "Mathematics through computation"
+    url = "tristanhodgson.com"
 
-# Drawing text using the dynamic TEXT_ANCHOR parameter
-draw.text((X_TEXT, Y_NAME), name, font=font(NAME_SIZE), fill=FG,
-          stroke_width=1, stroke_fill=FG, anchor=TEXT_ANCHOR)
-draw.rounded_rectangle(
-    (RECT_X1, Y_BAR, RECT_X2, Y_BAR + 7), radius=3, fill=ACCENT)
-draw.text((X_TEXT, Y_SUB), subtitle, font=font(
-    SUB_SIZE), fill=FG, anchor=TEXT_ANCHOR)
-draw.text((X_TEXT, Y_DETAIL), detail, font=font(
-    DETAIL_SIZE), fill=SECONDARY, anchor=TEXT_ANCHOR)
-draw.text((X_TEXT, Y_URL), url, font=font(
-    URL_SIZE), fill=ACCENT, anchor=TEXT_ANCHOR)
+    # Drawing text using the dynamic TEXT_ANCHOR parameter
+    draw.text((X_TEXT, Y_NAME), name, font=font(NAME_SIZE), fill=FG,
+              stroke_width=1 * SCALE, stroke_fill=FG, anchor=TEXT_ANCHOR)
+    draw.rounded_rectangle(
+        (RECT_X1, Y_BAR, RECT_X2, Y_BAR + 7 * SCALE), radius=3 * SCALE, fill=ACCENT)
+    draw.text((X_TEXT, Y_SUB), subtitle, font=font(
+        SUB_SIZE), fill=FG, anchor=TEXT_ANCHOR)
+    draw.text((X_TEXT, Y_DETAIL), detail, font=font(
+        DETAIL_SIZE), fill=SECONDARY, anchor=TEXT_ANCHOR)
+    draw.text((X_TEXT, Y_URL), url, font=font(
+        URL_SIZE), fill=ACCENT, anchor=TEXT_ANCHOR)
 
 
 # ---------------------------------------------------------------------------
@@ -292,7 +287,9 @@ cos_rot, sin_rot = math.cos(rotation), math.sin(rotation)
 # Grid Evaluation & Marching Squares
 # ---------------------------------------------------------------------------
 
-GRID_RES = 160
+# Limit computational grid density to the final output scale to prevent massive lag
+# (the drawing itself will map this layout cleanly up to the AA scale)
+GRID_RES = 160 * OUTPUT_SCALE
 
 img_x_coords = [X_MIN_IMG + c *
                 (X_MAX_IMG - X_MIN_IMG) / (GRID_RES - 1) for c in range(GRID_RES)]
@@ -371,6 +368,10 @@ cycle_length = 2 * palette_len - 2
 
 fade_range = FADE_END - FADE_START if FADE_END != FADE_START else 1.0
 
+# Define line thickness parameters (scaled by supersampling factor)
+LINE_WIDTH = 2 * SCALE
+CAP_RADIUS = LINE_WIDTH / 2.0
+
 for i in range(1, NUM_CONTOURS):
     fraction = (i / NUM_CONTOURS) ** 1.5
     thresh = min_loss + fraction * (max_contour_val - min_loss)
@@ -389,21 +390,42 @@ for i in range(1, NUM_CONTOURS):
 
         if FADE_DIRECTION == "in":
             fade = min(1.0, max(0.0, (x_mid - FADE_START) / fade_range))
-        else:
+        elif FADE_DIRECTION == "out":
             fade = min(1.0, max(0.0, 1.0 - (x_mid - FADE_START) / fade_range))
+        else:
+            fade = 1.0
 
         if fade > 0.01:
             blended_rgb = rgb_blend(base_rgb, bg_rgb, fade)
             fill_hex = rgb_to_hex(blended_rgb)
-
-            draw.line([pt1, pt2], fill=fill_hex, width=2)
+            
+            # Draw the main line segment
+            draw.line([pt1, pt2], fill=fill_hex, width=LINE_WIDTH)
+            
+            # Draw round caps at endpoints to fill in the "wedge gaps" at joints
+            draw.ellipse([pt1[0] - CAP_RADIUS, pt1[1] - CAP_RADIUS, 
+                          pt1[0] + CAP_RADIUS, pt1[1] + CAP_RADIUS], fill=fill_hex)
+            draw.ellipse([pt2[0] - CAP_RADIUS, pt2[1] - CAP_RADIUS, 
+                          pt2[0] + CAP_RADIUS, pt2[1] + CAP_RADIUS], fill=fill_hex)
 
 
 # ---------------------------------------------------------------------------
-# Save
+# Downsample & Save
 # ---------------------------------------------------------------------------
+
+# Scale the drawing back down by the AA_FACTOR using a high-quality resampling filter 
+# to achieve smooth antialiased pixel rendering.
+FINAL_WIDTH = WIDTH // AA_FACTOR
+FINAL_HEIGHT = HEIGHT // AA_FACTOR
+
+if hasattr(Image, "Resampling"):
+    resample_filter = Image.Resampling.LANCZOS
+else:
+    resample_filter = Image.LANCZOS
+
+image = image.resize((FINAL_WIDTH, FINAL_HEIGHT), resample_filter)
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 image.save(OUTPUT_PATH, "PNG", optimize=True)
 
-print(f"Saved {args.mode} preview to {OUTPUT_PATH}")
+print(f"Saved {args.mode} preview to {OUTPUT_PATH} at {OUTPUT_SCALE}x resolution (with Anti-aliasing)")
