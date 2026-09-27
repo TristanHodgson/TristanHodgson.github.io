@@ -22,6 +22,9 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
 </head>
 
 <body>
@@ -70,11 +73,53 @@
             </a>
         </div>
 
-        <!-- <div class="box">
-            <h2 id="mat-profiling">One Day Project: Profiling matrix multiplication in C</h2>
-            <small>Sunday 20th of September, 2026</small>
-            <p></p>
-        </div> -->
+    <div class="box">
+        <h2 id="mat-profiling">One Day Project: Profiling Matrix Multiplication in C</h2>
+        <small>Sunday 20th of September, 2026</small>
+
+        <p>It's always been a slight point of embarrassment for me that I don't know a "real" programming language. I've done lots of Python and bits of R and SQL but I've never really learnt a compiled language. This short project was a brief excursion into the world of C, investigating a new facet of the familiar problem of matrix multiplication.</p>
+        <p>I compared two algorithms to calculate the product of random matrices sampled from $\operatorname{Uniform}[0,1]^{n \times n}$. The two algorithms are mathematically identical but computationally quite different, despite having the same time complexity.</p>
+
+        <figure class="code-example">
+            <figcaption>
+                <span>ijk ordering</span>
+                <span class="code-language">C</span>
+            </figcaption>
+            <pre class="code-block"><code class="language-c">for (int i = 0; i &lt; n; i++) {
+    for (int j = 0; j &lt; n; j++) {
+        for (int k = 0; k &lt; n; k++) {
+            C[i * n + j] += A[i * n + k] * B[k * n + j];
+        }
+    }
+}</code></pre>
+        </figure>
+
+        <figure class="code-example">
+            <figcaption>
+                <span>ikj ordering</span>
+                <span class="code-language">C</span>
+            </figcaption>
+            <pre class="code-block"><code class="language-c">for (int i = 0; i &lt; n; i++) {
+    for (int k = 0; k &lt; n; k++) {
+        for (int j = 0; j &lt; n; j++) {
+            C[i * n + j] += A[i * n + k] * B[k * n + j];
+        }
+    }
+}</code></pre>
+        </figure>
+        <p>When we run both algorithms, we can see a clear performance difference in the graphs below that, further, seems to increase as $n$ increases. </p>
+
+        <div class="image-grid">
+            <img src="assets/mat-profiling/small.svg" alt="Graph of the time taken to multiply two matrices of size n x n against n, for small matrices (up to 100) and the two algorithms."/>
+            <img src="assets/mat-profiling/medium.svg" alt="Graph of the time taken to multiply two matrices of size n x n against n, for medium matrices (up to 1000) and the two algorithms."/>
+            <img src="assets/mat-profiling/large.svg" alt="Graph of the time taken to multiply two matrices of size n x n against n, for large matrices (up to 5000) and the two algorithms."/>
+        </div>
+        <p>The thing to note when attempting to explain this performance discrepancy is that we store matrices as $A_{ij} = A[i * n + j]$ meaning that moving along a row means getting consecutive elements in memory while moving down a column necessitates a jump of $n$ places. In the ijk version, we walk down a column of $B$ leading to us skipping around the array, whereas in the ikj version, we walk along rows of $B$ and $C$, leading to more consecutive memory accesses.</p>
+        <p>If we focus on the $n=1000$ case, and we use <span class="monospace">perf</span> to profile the code, we can see this in practice through the cache misses. In the slower ijk version we have 5,274,318 cache misses compared to just 218,855 in the faster ikj version. More cache misses means that the processor has to spend more time fetching data from slower memory, reducing the performance of the code.</p>
+
+
+        <a class="btn" href="https://github.com/TristanHodgson/mat-profiling">Code</a>
+    </div>
 
         <div class="box">
             <h2 id="ft-comments">Observations from the comment sections of the Financial Times</h2>

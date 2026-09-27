@@ -404,3 +404,112 @@ a:hover .callout {
   .modules-grid > li:nth-child(5) { order: 5; } /* HT Year 1 */
   .modules-grid > li:nth-child(6) { order: 4; } /* TT Year 1 */
 }
+
+/* Image grid */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Code */
+
+.code-block {
+  background: var(--fg);
+  color: var(--a4);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Comments */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #616e88;
+}
+
+/* Keywords: for, int, etc. */
+.token.keyword {
+  color: #81a1c1;
+}
+
+/* Numbers */
+.token.number {
+  color: #b48ead;
+}
+
+/* Operators */
+.token.operator {
+  color: #81a1c1;
+}
+
+/* Functions */
+.token.function {
+  color: #88c0d0;
+}
+
+/* Strings and characters */
+.token.string,
+.token.char {
+  color: #a3be8c;
+}
+
+/* Boolean / constants */
+.token.boolean,
+.token.constant {
+  color: #b48ead;
+}
+
+/* Punctuation */
+.token.punctuation {
+  color: #d8dee9;
+}
+
+.code-example {
+  margin: 1.25rem 0;
+}
+
+.code-example figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #3b4252;
+  color: #d8dee9;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.code-language {
+  color: #88c0d0;
+  font-size: 0.75rem;
+}
+
+.code-example .code-block {
+  margin: 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.monospace {
+  font-family: var(--font-mono);
+}
