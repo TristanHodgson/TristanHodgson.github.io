@@ -7,6 +7,21 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
     <title>Tristan Hodgson</title>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
 </head>
 
 <body>
@@ -38,10 +53,24 @@
             </a>
         </div>
 
+        <div class="box">
+            <h2 id="exam-time">One Day Project: What's the Best Time of Year for Exams?</h2>
+            <small>Sunday 27th of September, 2026</small>
+            <p>Exams are never a fun experience, yet they can be made so much worse by the weather. My recent exams at the end of my second year were particularly bad for this, thanks to the <a href="https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/red-extreme-heat-warning-in-force-as-record-breaking-june-temperatures-forecast-">red extreme heat warnings</a> for temperatures that exceeded 38°C in the exam hall.</p>
+            <p>This led me to a slightly silly question: when would be the best time of year for exams? The natural follow-up question is: what makes a good exam week? For this project, I consider only the weather. Other factors like proximity to major holidays or birthdays are certainly important, but are much harder to quantify, so I ignore them.</p>
+            <p>The way I decided to score each potential exam week is by applying the following function: $$(1-\mathbb{I}_{[15,21]}(\text{Max temp})) \times \min(|\text{Max temp} - 15|, |\text{Max temp} - 21|) + \frac{1}{20} \text{Rainfall}.$$ We use the maximum daily temperature to avoid contaminating our score with cooler overnight conditions, not relevant to the times that exams are generally taken. We include the $\frac1{20}$ weight term to prevent the difference in scale between temperature and rainfall dominating the score. The parameters 15 and 21 are somewhat arbitrary, but are based on the temperature range I find most productive. This is perhaps slightly cooler than many would prefer, though I do have to wear a <a href="https://www.ox.ac.uk/students/academic/dress">suit and gown to my exams</a>.</p>
+            <p>Each year contains 53 possible weeks (since we must include partial weeks); we go through each one and find the week with the minimum score when averaged over every day in that week in all years (1925-2025). This week turns out to be week 39. You can see the distribution of scores across all weeks in the following boxplots:</p>
+            <img src="assets/exam-time/boxplot.svg" alt="Boxplot of the score function by week." width="100%"/>
+            <small>For each week we create a boxplot of the score function, the boxplot shows the distribution of scores for each day in that week over the hundred year dataset. The red plot is a rough estimate of my current main exam week, while the blue plot is our newly proposed ideal.</small>
+            <p>Having determined the best week, we can now investigate what the weather looks like during our new exam week. The following scatter plot shows maximum daily temperature against rainfall for our chosen week. This shows us that the vast majority of days in this week lie near the bottom of our plot (indicating low rainfall), and in between the horizontal lines (indicating pleasant temperature).</p>
+            <img src="assets/exam-time/scatter.svg" alt="A scatter graph of temperature against rainfall for the chosen best week." width="100%"/>
+            <p>We now have our answer: the best week for exams is the 39th week in that year. When does this come out to? It varies year to year, but roughly corresponds to the week commencing the 21st of September... one week before my birthday, far from ideal!</p>
+        </div>
+
         <!-- <div class="box">
-            <h2 id="game-streaming">A New Laptop</h2>
-            <small>Thursday 3rd of September, 2026</small>
-            <p>My laptop recently gave out and after a somewhat lengthy process with a repair shop we claim to the conclusion that it needed replacing. </p>
+            <h2 id="mat-profiling">One Day Project: Profiling matrix multiplication in C</h2>
+            <small>Sunday 20th of September, 2026</small>
+            <p></p>
         </div> -->
 
         <div class="box">
