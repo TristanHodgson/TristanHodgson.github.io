@@ -155,8 +155,8 @@
                     <div class="item-date">(<a href="https://github.com/TristanHodgson/lancaster-internship">Github</a> | Jul-Aug 2026)</div>
                 </div>
                 <ul>
-                    <li>Independently formulated research questions and proved results characterising optimal repair strategies in a Markov Decision Process model, including guarantees on system uptime and the structure of long-run behaviour</li>
-                    <li>Reduced policy representation from O(N<sup>2</sup>) to O(N) for an extended model by proving structural results</li>
+                    <li>Formulated research questions and proved results characterising optimal repair strategies in a Markov Decision Process model, including guarantees on system uptime and the structure of long-run behaviour</li>
+                    <li>Reduced policy representation from O(N^2) to O(N) for an extended model by proving structural results</li>
                     <li>Proposed further conjectures on optimal policy structure, proved special cases, and built computational experiments to systematically test them across the model's parameter space</li>
                 </ul>
             </div>
@@ -167,9 +167,9 @@
                     <div class="item-date">(One Week, Summer 2026)</div>
                 </div>
                 <ul>
-                    <li>Achieved 88% precision on commercial lead generation with an XGBoost model to predict refinancing across 80,000 UK property developers, using feature selection, hyperparameter tuning, and class weighting</li>
-                    <li>Added interpretable model outputs using SHAP after identifying demand in customer interviews, leading to an estimated 100% improvement in customer conversion rates in outreach campaigns</li>
-                    <li>Prevented temporal data leakage by engineering point-in-time SQL feature extraction for financial, governance, and group-structure data</li>
+                    <li>Developed a model to predict refinancing likelihood, leading to an estimated > 100% improvement in conversion rates through a new lead-prioritisation feature</li>
+                    <li>Achieved 88% precision across 80,000 UK property developers with XGBoost, using SQL to reconstruct historical data without contaminating the training data through temporal leakage</li>
+                    <li>Added interpretable outputs using SHAP after identifying demand in customer interviews</li>
                 </ul>
             </div>
 
@@ -179,15 +179,8 @@
                     <div class="item-date">(Oct 2025-)</div>
                 </div>
                 <ul>
-                    <li>Led the migration of the JCR website from a legacy Wix setup to the University-wide Fresco
-                        platform,
-                        reducing annual IT spend by 94% through platform consolidation</li>
-                    <li>Coordinated approval, requirements, and timelines across multiple College and University teams
-                    </li>
-                    <li>Audited and rewrote outdated site content in collaboration with JCR members, restructuring the
-                        site
-                        as a clear resource for prospective and current students</li>
-
+                    <li>Reduced annual IT spend by 94% by leading the JCR website migration from a legacy Wix setup to the University-wide Fresco platform</li>
+                    <li>Restructured the website as a clearer resource for prospective and current students, coordinating requirements and approvals across College, University, and JCR stakeholders</li>
                 </ul>
             </div>
 
@@ -199,19 +192,31 @@
                     <div class="item-date">(One Week, Summer 2025)</div>
                 </div>
                 <ul>
-                    <li>Redesigned operational workflows, replacing legacy spreadsheets using Power Query, User forms,
-                        and
-                        Pivot Tables</li>
-                    <li>Developed dynamic dashboards tailored to different tasks, simplifying the management of
-                        operational
-                        data</li>
-                    <li>Created documentation to enable users to understand and maintain the new system</li>
+                    <li>Replaced legacy spreadsheet workflows with a more maintainable and powerful operational system using Power Query, UserForms, and Pivot Tables</li>
+                    <li>Simplified management of operational data through task-specific dashboards and documentation that enabled users to use and maintain the new system</li>
                 </ul>
             </div>
         </div>
 
         <div class="box">
             <h2>Technical Projects</h2>
+
+            <div class="item">
+                <div class="item-row">
+                    <div class="item-title">Low Rank Approximation of Transformer Matrices for Decryption</div>
+                    <div class="item-date">
+                        <!-- <a
+                            href="https://github.com/TristanHodgson/Code-breaking-NN/blob/main/write-up/main.pdf?raw=true">Write-up</a>
+                        | -->
+                        <a href="https://github.com/TristanHodgson/low-rank-transformer">GitHub</a>
+                    </div>
+                </div>
+                <ul>
+                    <li>Increased inference throughput by 85% while retaining 98.5%  of the original accuracy by applying SVD low-rank approximation to transformer weight matrices</li>
+                    <li>Developed a greedy compression method that allocates rank by each matrix's sensitivity to truncation, achieving a 49.7% reduction in error rate compared to singular-value-based allocation</li>
+                    <li>Deployed models using Docker and FastAPI on AWS EC2 and benchmarked inference throughput for compressed and uncompressed models</li>
+                </ul>
+            </div>
 
             <div class="item">
                 <div class="item-row">
@@ -224,34 +229,12 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Modelled performance trade-offs between in-database and client-side matrix multiplication
-                        under compute, sparsity, and bandwidth constraints</li>
-                    <li>Benchmarked performance to validate asymptotic runtime predictions across matrices of
-                        varying size and sparsity</li>
-                    <li>Derived and validated the sparsity threshold function where in-database outperforms
-                        client-side computation to inform system architecture decisions</li>
+                    <li>Derived and empirically validated a sparsity threshold predicting when in-database matrix multiplication outperforms client-side computation</li>
+                    <li>Benchmarked performance across compute, bandwidth, matrix size, and sparsity, validating asymptotic runtime predictions</li>
                 </ul>
             </div>
 
-            <div class="item">
-                <div class="item-row">
-                    <div class="item-title">Known Prefix Neural Cryptanalysis with seq2seq Models</div>
-                    <div class="item-date">
-                        <a
-                            href="https://github.com/TristanHodgson/Code-breaking-NN/blob/main/write-up/main.pdf?raw=true">Write-up</a>
-                        |
-                        <a href="https://GitHub.com/TristanHodgson/Code-breaking-NN">GitHub</a>
-                    </div>
-                </div>
-                <ul>
-                    <li>Implemented LSTM seq2seq models in PyTorch to perform neural cryptanalysis of Caesar and
-                        substitution ciphers on natural-language sequences</li>
-                    <li>Extended prior neural cryptanalysis work by introducing a known prefix, reducing
-                        character-level errors by 41%</li>
-                    <li>Benchmarked against a random baseline to validate that the model learned decryption
-                        structure</li>
-                </ul>
-            </div>
+
 
             <div class="item">
                 <div class="item-row">
@@ -261,12 +244,8 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Constructed a data pipeline to ingest government statistics, transforming transaction data
-                        into time-series data</li>
-                    <li>Segmented the housing market using PCA and K-Means, revealing regional and socio-economic
-                        divides without relying on location-based data</li>
-                    <li>Visualized complex datasets, using interactive maps and graphs to enable exploratory
-                        analysis of price and returns</li>
+                    <li>Identified regional and socio-economic housing-market divisions without using location features by segmenting government data with PCA and K-Means</li>
+                    <li>Built a data pipeline and interactive dashboard for exploratory analysis of housing prices and returns across time and geography</li>
                 </ul>
             </div>
 
